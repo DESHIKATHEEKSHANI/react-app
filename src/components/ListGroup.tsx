@@ -1,11 +1,16 @@
+import { Fragment } from "react";
+
 function ListGroup() {
+  const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
   return (
-    <ul className="list-group">
-      <li className="list-group-item">Item 1</li>
-      <li className="list-group-item">Item 2</li>
-      <li className="list-group-item">Item 3</li>
-      <li className="list-group-item">Item 4</li>
-    </ul>
+    <>
+      <h1>My List Group</h1>
+      <ul className="list-group">
+        {items.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </>
   );
 }
 
