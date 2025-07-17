@@ -1,7 +1,13 @@
 import { Fragment } from "react";
 
 function ListGroup() {
-  const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+  items = [];
+
+    if (items.length === 0) {
+        return <p>No items found</p>;
+    }
+
   return (
     <>
       <h1>My List Group</h1>
