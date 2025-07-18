@@ -1,11 +1,13 @@
+import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 
 function App() {
+    const[showAlert, setShowAlert] = useState(false);
     return (
         <div>
-            <Alert>My Alert</Alert>
-            <Button color="primary" onClick={() => alert("Button clicked!")}>
+           { showAlert && <Alert>My Alert</Alert>}
+            <Button color="primary" onClick={() => setShowAlert(true)}>
                 Click Me
             </Button>
         </div>
