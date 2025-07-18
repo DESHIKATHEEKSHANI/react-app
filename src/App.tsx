@@ -6,7 +6,7 @@ function App() {
     const[showAlert, setShowAlert] = useState(false);
     return (
         <div>
-           { showAlert && <Alert>My Alert</Alert>}
+           { showAlert && <Alert onClose={() => setShowAlert(false)}>My Alert</Alert>}
             <Button color="primary" onClick={() => setShowAlert(true)}>
                 Click Me
             </Button>
