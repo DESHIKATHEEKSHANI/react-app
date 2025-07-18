@@ -1,22 +1,20 @@
-import { Fragment } from "react";
-import { MouseEvent } from "react";
-
 function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
-
-  // Event handler for item click
-  const handleClick = (event: MouseEvent) => console.log(event);
+  let selectedIndex = 0;
 
   return (
     <>
       <h1>My List Group</h1>
       {items.length === 0 && <p>No items found</p>}
       <ul className="list-group">
-        {items.map((item) => (
+        {items.map((item, index) => (
           <li
-            className="list-group-item"
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
             key={item}
-            onClick={handleClick}
           >
             {item}
           </li>
